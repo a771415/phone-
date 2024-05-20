@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>عرض البيانات</title>
+</head>
+<body>
+    <h1>عرض البيانات</h1>
+    <form method="post" action="/data">
+        <input type="text" name="search" placeholder="ابحث هنا...">
+        <button type="submit">بحث</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>نوع الهاتف</th>
+            <th>نوع المشكلة</th>
+            <th>اسم الهاتف</th>
+            <th>إصدار النطاق الأساسي</th>
+            <th>الإصدار</th>
+            <th>كود التخصيص الخاص بالبلد</th>
+            <th>المشكلة</th>
+            <th>حل المشكلة</th>
+            <th>الملف</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item["Phone Type"] }}</td>
+            <td>{{ item["Issue Type"] }}</td>
+            <td>{{ item["Phone Name"] }}</td>
+            <td>{{ item["Baseband"] }}</td>
+            <td>{{ item["Version"] }}</td>
+            <td>{{ item["CSC"] }}</td>
+            <td>{{ item["problm"] }}</td>
+            <td>{{ item["fixproblm"] }}</td>
+            <td>{% if item["file"] %} <a href="/file/{{ item['file'] }}">تحميل</a> {% else %} لا يوجد {% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">العودة إلى الصفحة الرئيسية</a>
+</body>
+</html>

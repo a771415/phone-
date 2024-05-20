@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>إضافة بيانات</title>
+</head>
+<body>
+    <h1>إضافة بيانات</h1>
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <label for="phone_type">نوع الهاتف:</label>
+        <input type="text" id="phone_type" name="phone_type" required><br>
+        <label for="issue_type">نوع المشكلة:</label>
+        <input type="text" id="issue_type" name="issue_type" required><br>
+        <label for="phone_name">اسم الهاتف:</label>
+        <input type="text" id="phone_name" name="phone_name" required><br>
+        <label for="baseband">إصدار النطاق الأساسي:</label>
+        <input type="text" id="baseband" name="baseband" required><br>
+        <label for="version">الإصدار:</label>
+        <input type="text" id="version" name="version" required><br>
+        <label for="csc">كود التخصيص الخاص بالبلد:</label>
+        <input type="text" id="csc" name="csc" required><br>
+        <label for="problm">المشكلة:</label>
+        <textarea id="problm" name="problm" required></textarea><br>
+        <label for="fixproblm">حل المشكلة:</label>
+        <textarea id="fixproblm" name="fixproblm" required></textarea><br>
+        <label for="file">الملف:</label>
+        <input type="file" id="file" name="file"><br>
+        <button type="submit">إضافة</button>
+    </form>
+    <br>
+    <a href="/">العودة إلى الصفحة الرئيسية</a>
+</body>
+</html>
